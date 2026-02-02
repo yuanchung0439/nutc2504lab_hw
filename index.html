@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>個人名片｜你的姓名</title>
+  <link rel="stylesheet" href="color.css" />
+</head>
+
+<body>
+  <main class="card">
+    <header class="header">
+      <div class="avatar" aria-hidden="true">🧑‍💻</div>
+      <div>
+        <h1 class="name">鍾鎮遠</h1>
+        <p class="subtitle">個人名片網頁｜GitHub Pages</p>
+      </div>
+    </header>
+
+    <section class="info">
+      <div class="row">
+        <span class="label">班級</span>
+        <span class="value">資工三一</span>
+      </div>
+
+      <div class="row">
+        <span class="label">姓名</span>
+        <span class="value">鍾鎮遠</span>
+      </div>
+
+      <div class="row">
+        <span class="label">電子郵件</span>
+        <span class="value">
+          <a href="#">yuanchung0439@gmail.com</a>
+        </span>
+      </div>
+    </section>
+
+    <section class="extra">
+      <h2>關於我</h2>
+      <p>正在學習中...</p>
+
+      <div class="links">
+        <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="#" target="_blank" rel="noreferrer">Portfolio</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Yuan</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
