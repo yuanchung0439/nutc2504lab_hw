@@ -42,8 +42,9 @@ def olmocr2_vlm_options(
 
 
 
-pineline_options = PdfPipelineOptions()
-pineline_options.do_ocr = True
+pineline_options = PdfPipelineOptions(
+    do_ocr=False
+)
 
 
 #============================
@@ -64,15 +65,25 @@ result.document.save_as_markdown(filename="./cw06/rapid_docling_sample.md")
 #============================
 #==========OLM OCR2==========
 #============================
-pineline_options = VlmPipelineOptions(enable_remote_services=True)
-pineline_options.vlm_options = olmocr2_vlm_options()
-converter = DocumentConverter(
+pipeline_options = VlmPipelineOptions(
+    enable_remote_services=True  # 必須啟用以呼叫遠端 API
+)
+   
+# 設定 olmocr2 的 VLM 選項
+pipeline_options.vlm_options = olmocr2_vlm_options(
+    prompt="Convert this page to clean, readable markdown format.",
+    temperature=0.0,  # olmocr2 建議使用較低的溫度
+)
+
+# 建立文件轉換器
+doc_converter = DocumentConverter(
     format_options={
         InputFormat.PDF: PdfFormatOption(
-            pipeline_options=pineline_options,
-            pipeline_cls=VlmPipeline
+            pipeline_options=pipeline_options,
+            pipeline_cls=VlmPipeline,
         )
     }
 )
-result = converter.convert(SOURCE_PATH)
+
+result = doc_converter.convert(SOURCE_PATH)
 result.document.save_as_markdown(filename="./cw06/olm_docling_sample.md")
