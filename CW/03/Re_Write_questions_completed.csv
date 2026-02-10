@@ -1,0 +1,7 @@
+﻿conversation_id,questions_id,questions,answer,source
+1,1,Google Cloud 的 N4A 虛擬機器有什麼特色？,Google Cloud 的 N4A 虛擬機器有什麼特色？,data_04.txt
+1,2,它跟上一代的 C4A 有什麼不同？,Google N4A 虛擬機器跟上一代的 Google C4A 裸機有什麼不同？,data_04.txt
+1,3,那目前可以在哪些地區使用這個服務？,目前可以在哪些地區使用 Google N4A 機器服務？,data_04.txt
+2,1,最近去日本旅遊天氣要注意什麼？,最近去日本旅遊天氣要注意什麼？,data_03.txt
+2,2,那邊現在有流感疫情嗎？,日本現在有流感疫情嗎,data_03.txt
+2,3,東京的情況嚴重嗎？,東京目前流感疫情嚴重嗎,data_03.txt
